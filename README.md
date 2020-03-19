@@ -1,16 +1,16 @@
-##Toolbox storybook
+## Toolbox storybook
 
-####Install storybook dependencies 
+#### Install storybook dependencies 
 ```
 yarn install
 ```
 
-####Launch storybook
+#### Launch storybook
 ```
 yarn storybook
 ```
 
-####Build a deployable storybook
+#### Build a deployable storybook
 ```
 yarn build-storybook
 ```
