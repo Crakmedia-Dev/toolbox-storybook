@@ -13,6 +13,10 @@ Button.propTypes = {
   children: PropTypes.node,
   onClick: PropTypes.func
 }
+Button.defaultTypes = {
+  children: null,
+  onClick: () => {}
+}
 
 /*
  * Basic button component to show capabilities of Storybook.
