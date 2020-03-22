@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 
 const Button = ({children, onClick}) => {
   return (
@@ -8,4 +9,13 @@ const Button = ({children, onClick}) => {
   )
 }
 
+Button.propTypes = {
+  children: PropTypes.node,
+  onClick: PropTypes.func
+}
+
+/*
+ * Basic button component to show capabilities of Storybook.
+ * Usage of `markdown` is highly recommended for documentation.
+ */
 export default Button
