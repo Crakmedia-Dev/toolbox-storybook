@@ -9,10 +9,15 @@ export default {
   decorators: [withA11y]
 };
 
-// Story : Basic button with text
+/*
+ * Basic button with text.
+ */
 export const WithText = () => <Button onClick={action('clicked')}>Hello Button</Button>;
 
-// Story : Augmented button with emoji
+/*
+ * Augmented button with emoji.
+ * Usage of `markdown` is highly recommended for documentation.
+ */
 export const WithEmoji = () => (
   <Button onClick={action('clicked')}>
     <span role="img" aria-label="so cool">
