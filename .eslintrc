@@ -1,0 +1,87 @@
+{
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "plugins": ["import", "jest", "jsx-a11y", "react"],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest/globals": true,
+    "node": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
+  },
+  "rules": {
+    "arrow-parens": ["error", "as-needed"], // In the case of a single attribute being passed to the function, parentheses become redundant.
+    "comma-dangle": ["warn", "never"], // We prefer extra review lines to redundant commas.
+    "no-console": "off", // We use next.js, console logs are a common usage for terminal output.
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true // ++ && -- operators are only accepted in for loops.
+      }
+    ],
+    "object-curly-spacing": ["warn", "always"], // Spacing consistency provides a friendlier code-reading experience.
+    "quotes": [
+      "error",
+      "single", // Code should use single quotes when possible.
+      {
+        "avoidEscape": true // Privilege double quotes over escaped characters.
+      }
+    ],
+    "semi": [
+      "error",
+      "never", // The team agreed upon a no semi-colon javascript code.
+      {
+        "beforeStatementContinuationChars": "never"
+      }
+    ],
+
+    /* IMPORT PLUGIN RULES */
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true // We have dev-dependencies, which are valid.
+      }
+    ],
+
+    /* JEST PLUGIN RULES */
+    "jest/no-disabled-tests": "warn", // This rule raises a warning about disabled tests.
+    "jest/no-focused-tests": "warn", // This rule reminds you to remove .only from your tests by raising a warning whenever you are using the exclusivity feature.
+    "jest/no-identical-title": "error", // Having identical titles for two different tests or test suites may create confusion.
+    "jest/prefer-to-have-length": "warn", // This rule triggers a warning if toBe(), toEqual() or toStrictEqual() is used to assert object's length property.
+    "jest/valid-expect": "error", // Ensure expect() is called with a single argument and there is an actual expectation made.
+
+    /* JSX-ACCESSIBILITY PLUGIN RULES */
+    "jsx-a11y/media-has-caption": "off", // Most of our media do not contain captions.
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"], // The Link component requires an anchor tag to be passed to it, leading to a false-positive validation here.
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ],
+
+    /* REACT PLUGIN RULES */
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        "html": "enforce", // Prop spreading should not be used with default html tags.
+        "custom": "ignore", // Prop spreading in custom jsx tags is tolerated, since we require prop-types to be declared.
+        "explicitSpread": "enforce" // Explicit spreading is still spreading, the above rule options should be followed
+      }
+    ],
+    "react/require-default-props": [
+      "error",
+      {
+        "forbidDefaultForRequired": true, // A required props should not have a deafault value.
+        "ignoreFunctionalComponents": true // Our functional components are already written with default props in the props declaration.
+      }
+    ]
+  }
+}
