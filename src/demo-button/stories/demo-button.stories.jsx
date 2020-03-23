@@ -4,11 +4,12 @@ import { withA11y } from '@storybook/addon-a11y'
 import { text, withKnobs } from '@storybook/addon-knobs'
 import { withTests } from '@storybook/addon-jest'
 import Button from '../components/button'
+import results from '../../.jest/test-results.json'
 
 export default {
   title: 'Demo-Button',
   component: Button,
-  decorators: [withA11y, withKnobs, withTests()]
+  decorators: [withA11y, withKnobs, withTests({ results })]
 }
 
 export const WithText = () => (
@@ -16,6 +17,12 @@ export const WithText = () => (
     {text('children', 'Hello world!')}
   </Button>
 )
+
+WithText.story = {
+  parameters: {
+    jest: ['button.test.jsx']
+  }
+}
 
 export const WithEmoji = () => (
   <Button onClick={action('clicked')}>
@@ -27,5 +34,8 @@ export const WithEmoji = () => (
 
 // Removes doc page for this story
 WithEmoji.story = {
-  parameters: { docs: { page: null } }
+  parameters: {
+    docs: { page: null },
+    jest: ['button.test.jsx']
+  }
 }

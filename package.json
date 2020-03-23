@@ -3,7 +3,7 @@
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook",
     "test": "jest --watchAll",
-    "test:generate-output": "jest --json --outputFile=src/.jest/test-results.json || true"
+    "test:generate-output": "jest --json --outputFile=src/.jest/test-results.json"
   },
   "dependencies": {
     "react": "^16.13.0",
