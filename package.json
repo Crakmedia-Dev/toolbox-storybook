@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook",
+    "test": "jest --collect-coverage --watchAll --json --outputFile=src/.jest/test-results.json",
+    "test:generate-output": "jest --json --outputFile=src/.jest/test-results.json || true"
+  },
   "dependencies": {
     "react": "^16.13.0",
     "react-scripts": "^3.4.0"
@@ -7,6 +13,7 @@
     "@storybook/addon-a11y": "^5.3.17",
     "@storybook/addon-actions": "^5.3.17",
     "@storybook/addon-docs": "^5.3.17",
+    "@storybook/addon-jest": "^5.3.17",
     "@storybook/addon-knobs": "^5.3.17",
     "@storybook/addon-links": "^5.3.17",
     "@storybook/addon-storyshots": "^5.3.17",
@@ -18,10 +25,5 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "prop-types": "^15.7.2",
     "react-test-renderer": "^16.13.1"
-  },
-  "scripts": {
-    "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook",
-    "test": "jest"
   }
 }

@@ -7,7 +7,10 @@ import {text, withKnobs} from "@storybook/addon-knobs";
 export default {
   title: 'Demo-Button',
   component: Button,
-  decorators: [withA11y, withKnobs]
+  decorators: [withA11y, withKnobs],
+  parameters: {
+    jest: ['button.test.js']
+  }
 };
 
 export const WithText = () => (
@@ -24,5 +27,9 @@ export const WithEmoji = () => (
 
 // Removes doc page for this story
 WithEmoji.story = {
-  parameters: { docs: { page: null } }
+  parameters: {
+    docs: {
+      page: null
+    },
+  }
 };
