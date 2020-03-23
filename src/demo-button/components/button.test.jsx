@@ -6,10 +6,11 @@ describe('Button', () => {
   let component
   const onClickMock = jest.fn()
   const defaultChildren = 'text'
+  const defaultButtonType = 'button'
 
   beforeEach(() => {
     component = shallow(
-      <Button onClick={onClickMock}>{defaultChildren}</Button>
+      <Button type={defaultButtonType} onClick={onClickMock}>{defaultChildren}</Button>
     )
   })
 
@@ -29,5 +30,17 @@ describe('Button', () => {
     component = shallow(<Button>{childrenAsReactNode}</Button>)
 
     expect(component.prop('children')).toBe(childrenAsReactNode)
+  })
+
+  it('should have button type "button" by default', () => {
+    expect(component.prop('type')).toBe(defaultButtonType)
+  })
+
+  it('should have button type passed in props', () => {
+    const buttonTypeSubmit = 'submit'
+    component.unmount()
+    component = shallow(<Button type={buttonTypeSubmit} />)
+
+    expect(component.prop('type')).toBe(buttonTypeSubmit)
   })
 })

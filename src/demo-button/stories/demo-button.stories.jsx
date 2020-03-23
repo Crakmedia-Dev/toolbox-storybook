@@ -2,12 +2,13 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { withA11y } from '@storybook/addon-a11y'
 import { text, withKnobs } from '@storybook/addon-knobs'
+import { withTests } from '@storybook/addon-jest'
 import Button from '../components/button'
 
 export default {
   title: 'Demo-Button',
   component: Button,
-  decorators: [withA11y, withKnobs]
+  decorators: [withA11y, withKnobs, withTests()]
 }
 
 export const WithText = () => (
