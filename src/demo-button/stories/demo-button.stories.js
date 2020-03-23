@@ -25,4 +25,4 @@ export const WithEmoji = () => (
 // Removes doc page for this story
 WithEmoji.story = {
   parameters: { docs: { page: null } }
-}
+};

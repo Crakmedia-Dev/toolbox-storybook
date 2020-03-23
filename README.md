@@ -14,3 +14,8 @@ yarn storybook
 ```
 yarn build-storybook
 ```
+
+#### Launch tests
+```
+yarn test
+```
