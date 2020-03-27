@@ -1,9 +1,11 @@
 {
   "scripts": {
-    "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook",
-    "test": "jest --watchAll",
-    "test:generate-output": "jest --json --outputFile=src/.jest/test-results.json"
+    "dev": "start-storybook -p 9009",
+    "build": "build-storybook",
+    "test": "jest",
+    "test:coverage": "jest --json --outputFile=src/.jest/test-results.json",
+    "test:watch-coverage": "jest --watchAll --coverage --json --outputFile=src/.jest/test-results.json",
+    "serve": "start-storybook -p 3000"
   },
   "dependencies": {
     "react": "^16.13.0",
