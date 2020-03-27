@@ -21,5 +21,5 @@ sketch
 
 storybook-static
 coverage
-.jest
+src/test-results.json
 .idea
