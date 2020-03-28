@@ -10,7 +10,7 @@
   "main": "src/index.js",
   "version": "1.0.0",
   "bin": {
-    "toolbox-storybook": "node node_modules/@storybook/react/bin/index.js"
+    "toolbox-storybook": "./bin/start-storybook.js"
   },
   "scripts": {
     "storybook": "start-storybook -p 9009",
@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "react": "^16.13.0",
-    "react-scripts": "^3.4.0"
+    "react-scripts": "^3.4.0",
+    "shelljs": "^0.8.3"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^5.3.17",
