@@ -2,26 +2,26 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { withA11y } from '@storybook/addon-a11y'
 import { text, withKnobs } from '@storybook/addon-knobs'
-import Button from '../components/button'
+import Index from './index'
 
 export default {
-  title: 'Demo-Button',
-  component: Button,
+  title: 'Demo-Index',
+  component: Index,
   decorators: [withA11y, withKnobs]
 }
 
 export const WithText = () => (
-  <Button onClick={action('clicked')}>
+  <Index onClick={action('clicked')}>
     {text('children', 'Hello world!')}
-  </Button>
+  </Index>
 )
 
 export const WithEmoji = () => (
-  <Button onClick={action('clicked')}>
+  <Index onClick={action('clicked')}>
     <span role="img" aria-label="so cool">
       {text('children', '😀 😎 👍 💯')}
     </span>
-  </Button>
+  </Index>
 )
 
 // Removes doc page for this story
