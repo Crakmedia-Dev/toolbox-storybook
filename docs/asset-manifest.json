@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/%3CLAN_Address%3E:%3CstorybookPort%3E/main.9af88ea28203b7a47181.bundle.js",
+    "main.js.map": "/%3CLAN_Address%3E:%3CstorybookPort%3E/main.9af88ea28203b7a47181.bundle.js.map",
+    "runtime~main.js": "/%3CLAN_Address%3E:%3CstorybookPort%3E/runtime~main.9af88ea28203b7a47181.bundle.js",
+    "runtime~main.js.map": "/%3CLAN_Address%3E:%3CstorybookPort%3E/runtime~main.9af88ea28203b7a47181.bundle.js.map",
+    "vendors~main.js": "/%3CLAN_Address%3E:%3CstorybookPort%3E/vendors~main.9af88ea28203b7a47181.bundle.js",
+    "vendors~main.js.map": "/%3CLAN_Address%3E:%3CstorybookPort%3E/vendors~main.9af88ea28203b7a47181.bundle.js.map",
+    "iframe.html": "/%3CLAN_Address%3E:%3CstorybookPort%3E/iframe.html",
+    "precache-manifest.da38caef4eae01d0874557ba2c06206d.js": "/%3CLAN_Address%3E:%3CstorybookPort%3E/precache-manifest.da38caef4eae01d0874557ba2c06206d.js",
+    "service-worker.js": "/%3CLAN_Address%3E:%3CstorybookPort%3E/service-worker.js",
+    "vendors~main.9af88ea28203b7a47181.bundle.js.LICENSE.txt": "/%3CLAN_Address%3E:%3CstorybookPort%3E/vendors~main.9af88ea28203b7a47181.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.9af88ea28203b7a47181.bundle.js",
+    "vendors~main.9af88ea28203b7a47181.bundle.js",
+    "main.9af88ea28203b7a47181.bundle.js"
+  ]
+}

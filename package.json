@@ -1,4 +1,22 @@
 {
+  "private": true,
+  "name": "toolbox-storybook",
+  "homepage": "<LAN_Address>:<storybookPort>",
+  "description": "Component toolbox for Crakmedia's website development",
+  "repository": "git@github.com:Crakmedia-Dev/toolbox-storybook.git",
+  "bugs": "https://github.com/Crakmedia-Dev/toolbox-storybook/issues",
+  "author": "Alexandre Consigny <aconsigny@crakmedia.com>, Sebastien De Varennes <sdevarennes@crakmedia.com>, Michelle Rochon <mrochon@crakmedia.com>",
+  "license": "MIT",
+  "main": "src/index.js",
+  "version": "1.0.0",
+  "bin": {
+    "toolbox-storybook": "./bin/start-storybook.js"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook",
+    "test": "jest"
+  },
   "dependencies": {
     "react": "^16.13.0",
     "react-scripts": "^3.4.0"
@@ -24,10 +42,5 @@
     "jest": "^25.1.0",
     "prop-types": "^15.7.2",
     "react-test-renderer": "^16.13.1"
-  },
-  "scripts": {
-    "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook",
-    "test": "jest"
   }
 }

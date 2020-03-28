@@ -2,7 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { withA11y } from '@storybook/addon-a11y'
 import { text, withKnobs } from '@storybook/addon-knobs'
-import Button from '../components/button'
+import Button from './index'
 
 export default {
   title: 'Demo-Button',
