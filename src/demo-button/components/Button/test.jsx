@@ -1,15 +1,15 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Index from './index'
+import Button from './index'
 
-describe('Index', () => {
+describe('Button', () => {
   let component
   const onClickMock = jest.fn()
   const defaultChildren = 'text'
 
   beforeEach(() => {
     component = shallow(
-      <Index onClick={onClickMock}>{defaultChildren}</Index>
+      <Button onClick={onClickMock}>{defaultChildren}</Button>
     )
   })
 
@@ -26,7 +26,7 @@ describe('Index', () => {
   it('expects children to be React Node', () => {
     const childrenAsReactNode = <span>{defaultChildren}</span>
     component.unmount()
-    component = shallow(<Index>{childrenAsReactNode}</Index>)
+    component = shallow(<Button>{childrenAsReactNode}</Button>)
 
     expect(component.prop('children')).toBe(childrenAsReactNode)
   })

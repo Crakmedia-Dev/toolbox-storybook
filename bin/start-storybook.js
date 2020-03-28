@@ -1,4 +1,8 @@
 #! /usr/bin/env node
-var shell = require("shelljs");
+const storybook = require('@storybook/react/standalone');
 
-shell.exec("node node_modules/@storybook/react/bin/index.js");
+storybook({
+  mode: 'dev',
+  port: 9009,
+  configDir: '.storybook/'
+});
