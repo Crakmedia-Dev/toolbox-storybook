@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import Button from './index'
 
-describe('Index', () => {
+describe('Button', () => {
   let component
   const onClickMock = jest.fn()
   const defaultChildren = <div className="bonjour" />
@@ -14,6 +14,10 @@ describe('Index', () => {
     )
   })
 
+  it('should render children elements', () => {
+    expect(component.containsMatchingElement(defaultChildren)).toBeTruthy()
+  })
+
   describe('when clicked', () => {
     it('should call onClick once', () => {
       component.find('button').simulate('click')
@@ -22,19 +26,13 @@ describe('Index', () => {
     })
   })
 
-  it('should render children elements', () => {
-    expect(component.containsMatchingElement(defaultChildren)).toBeTruthy()
-  })
-
-  it('should have button type "button" by default', () => {
-    expect(component.prop('type')).toBe(defaultButtonType)
-  })
-
   describe('when passed a type property value', () => {
-    it('should set button tag to passed value', () => {
+    it('should set button type to passed value', () => {
       const buttonTypeSubmit = 'submit'
 
-      expect(component.prop('type')).toBe(buttonTypeSubmit)
+      component.setProps({ type: buttonTypeSubmit })
+
+      expect(component.find(`button[type="${buttonTypeSubmit}"]`)).toHaveLength(1)
     })
   })
 })
