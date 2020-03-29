@@ -26,6 +26,12 @@ describe('Button', () => {
     })
   })
 
+  describe('when passed no type property value', () => {
+    it('should set button type to default', () => {
+      expect(component.find(`button[type="${defaultButtonType}"]`)).toHaveLength(1)
+    })
+  })
+
   describe('when passed a type property value', () => {
     it('should set button type to passed value', () => {
       const buttonTypeSubmit = 'submit'
