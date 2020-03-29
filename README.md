@@ -33,3 +33,9 @@ npm run test:watch-coverage
 yarn serve
 npm run serve
 ```
+
+#### Building a static version
+```
+yarn build
+npm run build
+```
