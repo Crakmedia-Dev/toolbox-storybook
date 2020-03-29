@@ -1,16 +1,16 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Index from './index'
+import Button from './index'
 
 describe('Index', () => {
   let component
   const onClickMock = jest.fn()
   const defaultChildren = <div className="bonjour" />
-  const defaultButtonType = Index.defaultProps.type
+  const defaultButtonType = Button.defaultProps.type
 
   beforeEach(() => {
     component = shallow(
-      <Index type={defaultButtonType} onClick={onClickMock}>{defaultChildren}</Index>
+      <Button type={defaultButtonType} onClick={onClickMock}>{defaultChildren}</Button>
     )
   })
 

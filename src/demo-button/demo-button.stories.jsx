@@ -5,7 +5,7 @@ import { text, withKnobs } from '@storybook/addon-knobs'
 import Index from './button'
 
 export default {
-  title: 'Demo-Index',
+  title: 'Demo-Button',
   component: Index,
   decorators: [withA11y, withKnobs]
 }

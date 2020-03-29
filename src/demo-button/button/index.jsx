@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Index = ({ children, onClick, type }) => {
+const Button = ({ children, onClick, type }) => {
   // ESLint only allows types to be hardcoded. Can't just 'type={type}' even if you have nice proptypes.
   if (type === 'button') {
     return (
@@ -17,13 +17,13 @@ const Index = ({ children, onClick, type }) => {
   )
 }
 
-Index.propTypes = {
+Button.propTypes = {
   children: PropTypes.node,
   onClick: PropTypes.func.isRequired,
   type: PropTypes.oneOf(['button', 'submit'])
 }
 
-Index.defaultProps = {
+Button.defaultProps = {
   children: null,
   type: 'button'
 }
@@ -32,4 +32,4 @@ Index.defaultProps = {
  * Basic button component to show capabilities of Storybook.
  * Usage of `markdown` is highly recommended for documentation.
  */
-export default Index
+export default Button
