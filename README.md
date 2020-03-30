@@ -22,7 +22,7 @@ yarn test
 npm run test
 ```
 
-During development, it is recommended to use for watching tests
+#### During development, it is recommended to use for watching tests
 ```
 yarn test:watch-coverage
 npm run test:watch-coverage
@@ -34,8 +34,10 @@ yarn serve
 npm run serve
 ```
 
-#### Building a static version
-```
-yarn build
-npm run build
-```
+
+#### How to prepare a pull request
+
+- Run tests using `yarn test:coverage` to ensure test results show in storybook.
+- Build project using `yarn build-storybook` to ensure static version has your changes. 
+- Commit your changes.
+- Prepare pull request.
