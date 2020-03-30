@@ -19,5 +19,6 @@ sketch
 
 # End of https://www.gitignore.io/api/react
 
-storybook-static
 coverage
+src/test-results.json
+.idea

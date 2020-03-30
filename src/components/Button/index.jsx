@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 const Button = ({ children, onClick, type }) => {
   // ESLint only allows types to be hardcoded. Can't just 'type={type}' even if you have nice proptypes.
-
   if (type === 'button') {
     return (
       <button type="button" onClick={onClick}>
@@ -20,14 +19,13 @@ const Button = ({ children, onClick, type }) => {
 
 Button.propTypes = {
   children: PropTypes.node,
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
   type: PropTypes.oneOf(['button', 'submit'])
 }
 
-Button.defaultTypes = {
-  type: 'button',
+Button.defaultProps = {
   children: null,
-  onClick: () => {}
+  type: 'button'
 }
 
 /*
