@@ -18,7 +18,7 @@ export const WithText = () => (
 
 WithText.story = {
   parameters: {
-    jest: ['index.test.jsx']
+    jest: ['Button/index.test.jsx']
   }
 }
 
@@ -34,6 +34,6 @@ export const WithEmoji = () => (
 WithEmoji.story = {
   parameters: {
     docs: { page: null },
-    jest: ['index.test.jsx']
+    jest: ['Button/index.test.jsx']
   }
 }

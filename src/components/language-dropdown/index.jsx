@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import LanguageList from './styles'
-import * as flags from '../flags-round'
+import * as flags from './flags-round'
 
 const LanguageItemContent = ({ code }) => {
   return (
@@ -30,6 +30,7 @@ const LanguageDropdown = ({ currentLanguage, languages }) => {
             className={`lang${
               code === currentLanguage.code ? ' selected' : ''
             }`}
+            key={code}
           >
             {code === currentLanguage.code ? (
               <button
@@ -66,14 +67,14 @@ LanguageDropdown.propTypes = {
     code: PropTypes.string,
     fullName: PropTypes.string
   }).isRequired,
-  languages: PropTypes.shape([
-    { code: PropTypes.string, fullName: PropTypes.string }
-  ]).isRequired
+  languages: PropTypes.arrayOf(
+    PropTypes.shape({
+      code: PropTypes.string,
+      fullName: PropTypes.string
+    })
+  ).isRequired
 }
 
-LanguageDropdown.defaultTypes = {
-  currentLanguage: { code: 'en' },
-  languages: [{ code: 'en' }]
-}
+LanguageDropdown.defaultProps = {}
 
 export default LanguageDropdown

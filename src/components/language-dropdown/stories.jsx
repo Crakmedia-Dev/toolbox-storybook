@@ -1,8 +1,7 @@
 import React from 'react'
-import { action } from '@storybook/addon-actions'
 import { withA11y } from '@storybook/addon-a11y'
 import { object, withKnobs } from '@storybook/addon-knobs'
-import LanguageDropdown from '../components'
+import LanguageDropdown from './index'
 
 export default {
   title: 'Language Dropdown',
@@ -12,7 +11,6 @@ export default {
 
 export const RoundedLanguageDropdown = () => (
   <LanguageDropdown
-    onClick={action('clicked')}
     currentLanguage={object(
       'currentLanguage',
       { code: 'en' },
@@ -25,3 +23,9 @@ export const RoundedLanguageDropdown = () => (
     )}
   />
 )
+
+RoundedLanguageDropdown.story = {
+  parameters: {
+    jest: ['Language-dropdown/index.test.jsx']
+  }
+}
