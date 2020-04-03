@@ -1,12 +1,42 @@
 {
-  "dependencies": {
-    "react": "^16.13.0",
-    "react-scripts": "^3.4.0"
+  "private": true,
+  "name": "toolbox-storybook",
+  "homepage": "https://crakmedia-dev.github.io/toolbox-storybook",
+  "description": "Component toolbox for Crakmedia's website development",
+  "repository": "git@github.com:Crakmedia-Dev/toolbox-storybook.git",
+  "bugs": "https://github.com/Crakmedia-Dev/toolbox-storybook/issues",
+  "author": "Alexandre Consigny <aconsigny@crakmedia.com>, Sebastien De Varennes <sdevarennes@crakmedia.com>, Michelle Rochon <mrochon@crakmedia.com>",
+  "license": "MIT",
+  "version": "1.0.0",
+
+  "main": "src/index.js",
+  "files": [
+    "src/**/index.js"
+  ],
+
+  "scripts": {
+    "dev": "npm run test:coverage && start-storybook -p 9009",
+    "build-storybook": "build-storybook -o docs",
+    "build-storybook:watch": "build-storybook -o docs -w",
+    "test": "react-scripts test --env=node --watchAll=false",
+    "test:coverage": "react-scripts test --json --outputFile=src/test-results.json --env=node --watchAll=false",
+    "test:watch": "react-scripts test --env=node",
+    "serve": "start-storybook -p 3000"
   },
+
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1"
+  },
+
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
     "@storybook/addon-a11y": "^5.3.17",
     "@storybook/addon-actions": "^5.3.17",
     "@storybook/addon-docs": "^5.3.17",
+    "@storybook/addon-jest": "^5.3.17",
     "@storybook/addon-knobs": "^5.3.17",
     "@storybook/addon-links": "^5.3.17",
     "@storybook/addon-storyshots": "^5.3.17",
@@ -14,6 +44,7 @@
     "@storybook/preset-create-react-app": "^2.0.0",
     "@storybook/react": "^5.3.17",
     "babel-plugin-require-context-hook": "^1.0.0",
+    "babel-plugin-styled-components": "^1.10.7",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint-config-airbnb": "^18.1.0",
@@ -21,14 +52,8 @@
     "eslint-plugin-jest": "^23.8.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
-    "jest": "^25.1.0",
     "prop-types": "^15.7.2",
     "react-test-renderer": "^16.13.1",
     "styled-components": "^5.0.1"
-  },
-  "scripts": {
-    "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook",
-    "test": "jest"
   }
 }
