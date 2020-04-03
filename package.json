@@ -23,7 +23,8 @@
     "eslint-plugin-react": "^7.19.0",
     "jest": "^25.1.0",
     "prop-types": "^15.7.2",
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^16.13.1",
+    "styled-components": "^5.0.1"
   },
   "scripts": {
     "storybook": "start-storybook -p 9009",
