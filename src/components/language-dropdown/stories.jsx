@@ -1,6 +1,6 @@
 import React from 'react'
 import { withA11y } from '@storybook/addon-a11y'
-import { object, withKnobs } from '@storybook/addon-knobs'
+import { number, object, withKnobs } from '@storybook/addon-knobs'
 import LanguageDropdown from './index'
 
 export default {
@@ -11,14 +11,17 @@ export default {
 
 export const RoundedLanguageDropdown = () => (
   <LanguageDropdown
-    currentLanguage={object(
-      'currentLanguage',
-      { code: 'en' },
-      'currentLanguage'
+    currentLanguageIndex={number(
+      'currentLanguageIndex',
+      0,
+      'currentLanguageIndex'
     )}
     languages={object(
       'languages',
-      [{ code: 'en' }, { code: 'fr' }],
+      [
+        { code: 'en', path: '/' },
+        { code: 'fr', path: '/' }
+      ],
       'languages'
     )}
   />

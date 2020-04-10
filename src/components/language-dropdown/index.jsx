@@ -3,20 +3,21 @@ import PropTypes from 'prop-types'
 import LanguageList from './styles'
 import * as flags from './flags-round'
 
-const LanguageItemContent = ({ code }) => {
+const LanguageItemContent = ({ code, fullName }) => {
   return (
     <>
       <img src={flags[code]} alt={code} />
-      {code}
+      {fullName || code}
     </>
   )
 }
 
 LanguageItemContent.propTypes = {
-  code: PropTypes.string
+  code: PropTypes.string.isRequired,
+  fullName: PropTypes.string
 }
 
-const LanguageDropdown = ({ currentLanguage, languages }) => {
+const LanguageDropdown = ({ currentLanguageIndex, languages }) => {
   const [isListVisible, setListVisible] = useState(false)
   const toggleLanguageList = () => {
     setListVisible(prevState => !prevState)
@@ -24,32 +25,35 @@ const LanguageDropdown = ({ currentLanguage, languages }) => {
 
   const languageChoices = useMemo(
     () =>
-      languages.map(({ code }) => {
+      languages.map(({ code, path, fullName }, index) => {
         return (
           <li
             className={`lang${
-              code === currentLanguage.code ? ' selected' : ''
+              index === currentLanguageIndex ? ' selected' : ''
             }`}
             key={code}
           >
-            {code === currentLanguage.code ? (
+            {index === currentLanguageIndex ? (
               <button
                 className="lang-inner"
                 type="button"
                 onClick={toggleLanguageList}
               >
-                <LanguageItemContent code={code} />
+                <LanguageItemContent code={code} fullName={fullName} />
                 <i className="arrow" />
               </button>
             ) : (
-              <a className="lang-inner" href={`/${code}`}>
-                <LanguageItemContent code={code} />
+              <a
+                className="lang-inner"
+                href={`/${code}${path.startsWith('/') ? path : `/${path}`}`}
+              >
+                <LanguageItemContent code={code} fullName={fullName} />
               </a>
             )}
           </li>
         )
       }),
-    [languages, currentLanguage]
+    [languages, currentLanguageIndex]
   )
 
   return (
@@ -63,14 +67,12 @@ const LanguageDropdown = ({ currentLanguage, languages }) => {
 }
 
 LanguageDropdown.propTypes = {
-  currentLanguage: PropTypes.shape({
-    code: PropTypes.string,
-    fullName: PropTypes.string
-  }).isRequired,
+  currentLanguageIndex: PropTypes.number,
   languages: PropTypes.arrayOf(
     PropTypes.shape({
-      code: PropTypes.string,
-      fullName: PropTypes.string
+      code: PropTypes.string.isRequired,
+      fullName: PropTypes.string,
+      path: PropTypes.string.isRequired
     })
   ).isRequired
 }

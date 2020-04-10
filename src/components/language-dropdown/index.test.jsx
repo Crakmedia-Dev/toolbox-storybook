@@ -4,22 +4,24 @@ import LanguageDropdown from './index'
 
 const defaultLanguage = {
   code: 'one step from eden',
-  fullName: 'one step from eden'
+  fullName: 'one step from eden',
+  path: 'ein quoi'
 }
 
 const languageWithFlag = {
   code: 'en',
-  fullName: 'jesuisundrapeauanglais'
+  fullName: 'jesuisundrapeauanglais',
+  path: '/'
 }
 
 describe('LanguageDropdown', () => {
   let component
   let closedDropdown
-  const defaultLanguages = [defaultLanguage, languageWithFlag]
+  const languages = [defaultLanguage, languageWithFlag]
 
   beforeEach(() => {
     component = shallow(
-      <LanguageDropdown currentLanguage={defaultLanguage} languages={defaultLanguages} />
+      <LanguageDropdown currentLanguageIndex={0} languages={languages} />
     )
     closedDropdown = component.find('ul')
   })
