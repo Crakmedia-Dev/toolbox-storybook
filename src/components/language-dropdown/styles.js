@@ -6,6 +6,7 @@ const LanguageList = styled.ul`
     itemCount = 1,
     innerPadding = 0.2,
     arrowSize = 0.3,
+    arrowPosition = 1,
     isListVisible,
     itemHeight = 2.5
   }) => {
@@ -46,7 +47,7 @@ const LanguageList = styled.ul`
             transform: translateY(-50%)
               ${isListVisible ? 'scaleY(1)' : 'scaleY(-1)'};
             top: 50%;
-            right: 1em;
+            right: ${arrowPosition}em;
           }
 
           .arrow:after {
@@ -72,7 +73,8 @@ const LanguageList = styled.ul`
           align-items: center;
           background-color: transparent;
           text-decoration: none;
-          padding: ${innerPadding}em;
+          padding: ${innerPadding}em ${arrowSize * 2 + arrowPosition * 2}em
+            ${innerPadding}em ${innerPadding}em;
           color: #000;
 
           ::-moz-focus-inner {
