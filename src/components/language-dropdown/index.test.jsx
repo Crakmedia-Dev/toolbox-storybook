@@ -1,5 +1,5 @@
 import React from 'react'
-import { mount, shallow } from 'enzyme'
+import { shallow } from 'enzyme'
 import LanguageDropdown from './index'
 
 const defaultLanguage = {
@@ -16,14 +16,12 @@ const languageWithFlag = {
 
 describe('LanguageDropdown', () => {
   let component
-  let closedDropdown
   const languages = [defaultLanguage, languageWithFlag]
 
   beforeEach(() => {
     component = shallow(
       <LanguageDropdown currentLanguageIndex={0} languages={languages} />
     )
-    closedDropdown = component.find('ul')
   })
 
   it('should render one selected language', () => {
@@ -32,9 +30,18 @@ describe('LanguageDropdown', () => {
     expect(selectedItem).toBeTruthy()
   })
 
-  it.todo('should render list as being closed')
+  it('should render list as being closed', () => {
+    const dropdownList = component.find('.selected').parent()
+
+    expect(dropdownList.prop('isListVisible')).toBeFalsy()
+  })
 
   describe('when clicked', () => {
-    it.todo('should open list')
+    it('should open list', () => {
+      component.find('button').simulate('click')
+      const dropdownList = component.find('.selected').parent()
+
+      expect(dropdownList.prop('isListVisible')).toBeTruthy()
+    })
   })
 })
