@@ -17,7 +17,7 @@ LanguageItemContent.propTypes = {
   fullName: PropTypes.string
 }
 
-const LanguageDropdown = ({ currentLanguageIndex, languages }) => {
+const LanguageDropdown = ({ currentLanguageCode, languages }) => {
   const [isListVisible, setListVisible] = useState(false)
   const toggleLanguageList = () => {
     setListVisible(prevState => !prevState)
@@ -25,15 +25,14 @@ const LanguageDropdown = ({ currentLanguageIndex, languages }) => {
 
   const languageChoices = useMemo(
     () =>
-      languages.map(({ code, path, fullName }, index) => {
+      Object.keys(languages).map(code => {
+        const { path, fullName } = languages[code]
         return (
           <li
-            className={`lang${
-              index === currentLanguageIndex ? ' selected' : ''
-            }`}
+            className={`lang${code === currentLanguageCode ? ' selected' : ''}`}
             key={code}
           >
-            {index === currentLanguageIndex ? (
+            {code === currentLanguageCode ? (
               <button
                 className="lang-inner"
                 type="button"
@@ -53,7 +52,7 @@ const LanguageDropdown = ({ currentLanguageIndex, languages }) => {
           </li>
         )
       }),
-    [languages, currentLanguageIndex]
+    [languages, currentLanguageCode]
   )
 
   return (
@@ -67,16 +66,11 @@ const LanguageDropdown = ({ currentLanguageIndex, languages }) => {
 }
 
 LanguageDropdown.propTypes = {
-  currentLanguageIndex: PropTypes.number,
-  languages: PropTypes.arrayOf(
-    PropTypes.shape({
-      code: PropTypes.string.isRequired,
-      fullName: PropTypes.string,
-      path: PropTypes.string.isRequired
-    })
-  ).isRequired
+  currentLanguageCode: PropTypes.string.isRequired,
+  languages: PropTypes.shape({
+    fullName: PropTypes.string,
+    path: PropTypes.string.isRequired
+  }).isRequired
 }
-
-LanguageDropdown.defaultProps = {}
 
 export default LanguageDropdown

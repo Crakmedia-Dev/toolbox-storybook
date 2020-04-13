@@ -3,24 +3,25 @@ import { shallow } from 'enzyme'
 import LanguageDropdown from './index'
 
 const defaultLanguage = {
-  code: 'one step from eden',
-  fullName: 'one step from eden',
-  path: 'ein quoi'
+  'bonjour madame': {
+    fullName: 'one step from eden',
+    path: 'ein quoi'
+  }
 }
 
 const languageWithFlag = {
-  code: 'en',
-  fullName: 'jesuisundrapeauanglais',
-  path: '/'
+  en: {
+    fullName: 'jesuisundrapeauanglais',
+    path: '/'
+  }
 }
-
 describe('LanguageDropdown', () => {
   let component
-  const languages = [defaultLanguage, languageWithFlag]
+  const languages = { ...defaultLanguage, ...languageWithFlag }
 
   beforeEach(() => {
     component = shallow(
-      <LanguageDropdown currentLanguageIndex={0} languages={languages} />
+      <LanguageDropdown currentLanguageCode="en" languages={languages} />
     )
   })
 
