@@ -30,7 +30,7 @@ export const Picture = () => {
       {
         url:
           'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAACQBAMAAAChYgmEAAAAGFBMVEX///8AAACrmHBpNgh/ICBVZmf/AAB/ma4uozpiAAABWElEQVRo3u2a4W3DIBSEs0JX6Aqs0BW8Ait4/SJOuRKwDW0jRcr77oeFYrgvP05+POzbDSGEEEIIvU4fj4IB41mMck0pwYCxoq+7YMB4LsPX0TdVydcDK90FA8ZidovFZ1UZ5JzLL7lKpMNkw4DRZXdU8SoAOaZGYmuO/oGmwYCxyLBjJ88RY159YcRjTLduNvIjsvWdF1oYIRnO7tk2bts2J7ULNwwY13u4M0axEEOwfd9tCgPGSs95yNiq5LVXuaxqsFRoYURlXGdXAXVx1d7Omf5FzwkjDGPlyHV6t21NYcDoyu2ZkdaPRxvtxs489Q8wgjOmb4m0Pufsq4y604327KwPPYyojOv4KqnKbhfZ9uBVc8Y0wwjLuA7xWEHbmNraz0rd/VkFIyRjWmu1ps3rIaNtRx9eIMGIx5jKD0F7eewd2x87DxiBGf4Kp/0W51+NLIx3ZnwDDqahFf3RnHIAAAAASUVORK5CYII=',
-        type: 'image/jpeg'
+        type: 'image/png'
       }
     ],
     'sources'
