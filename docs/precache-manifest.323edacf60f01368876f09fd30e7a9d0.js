@@ -1,13 +1,13 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "623e86443bb52803bcaf7d182d5e3ebe",
+    "revision": "cd8242de23a4b4d48e0e1ee70d397ab7",
     "url": "iframe.html"
   },
   {
-    "url": "main.7475b6b8798261484f7e.bundle.js"
+    "url": "main.5fde5c2b927690a3a4cd.bundle.js"
   },
   {
-    "url": "runtime~main.7475b6b8798261484f7e.bundle.js"
+    "url": "runtime~main.5fde5c2b927690a3a4cd.bundle.js"
   },
   {
     "revision": "61b9de50c4c4635017ce3d888081bee9",
@@ -42,9 +42,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "static/media/ru.5fa1fdbf.svg"
   },
   {
-    "url": "vendors~main.7475b6b8798261484f7e.bundle.js"
+    "url": "vendors~main.5fde5c2b927690a3a4cd.bundle.js"
   },
   {
-    "url": "vendors~main.7475b6b8798261484f7e.bundle.js.LICENSE.txt"
+    "url": "vendors~main.5fde5c2b927690a3a4cd.bundle.js.LICENSE.txt"
   }
 ]);
