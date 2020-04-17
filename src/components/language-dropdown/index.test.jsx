@@ -31,18 +31,18 @@ describe('LanguageDropdown', () => {
     expect(selectedItem).toBeTruthy()
   })
 
-  it('should render list as being closed', () => {
-    const dropdownList = component.find('.selected').parent()
+  it('should initially render the list non-visible', () => {
+    const dropdownList = component.find('.lang-dropdown')
 
-    expect(dropdownList.prop('isListVisible')).toBeFalsy()
+    expect(dropdownList.prop('isListVisible')).toEqual(false)
   })
 
   describe('when clicked', () => {
-    it('should open list', () => {
+    it('should set list visible', () => {
       component.find('button').simulate('click')
-      const dropdownList = component.find('.selected').parent()
+      const dropdownList = component.find('.lang-dropdown')
 
-      expect(dropdownList.prop('isListVisible')).toBeTruthy()
+      expect(dropdownList.prop('isListVisible')).toBe(true)
     })
   })
 })

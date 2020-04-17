@@ -59,6 +59,7 @@ const LanguageDropdown = ({ currentLanguageCode, languages }) => {
     <LanguageList
       isListVisible={isListVisible}
       itemCount={languageChoices.length}
+      className="lang-dropdown"
     >
       {languageChoices}
     </LanguageList>
@@ -67,10 +68,12 @@ const LanguageDropdown = ({ currentLanguageCode, languages }) => {
 
 LanguageDropdown.propTypes = {
   currentLanguageCode: PropTypes.string.isRequired,
-  languages: PropTypes.shape({
-    fullName: PropTypes.string,
-    path: PropTypes.string.isRequired
-  }).isRequired
+  languages: PropTypes.objectOf(
+    PropTypes.shape({
+      fullName: PropTypes.string,
+      path: PropTypes.string.isRequired
+    })
+  ).isRequired
 }
 
 export default LanguageDropdown
