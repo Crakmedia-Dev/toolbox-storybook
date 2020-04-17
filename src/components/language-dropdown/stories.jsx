@@ -19,8 +19,8 @@ export const RoundedLanguageDropdown = () => (
     languages={object(
       'languages',
       {
-        en: { path: '/hello' },
-        fr: { path: '/bonjour' }
+        en: { path: '/?path=/story/language-dropdown--rounded-language-dropdown#en' },
+        fr: { path: '/?path=/story/language-dropdown--rounded-language-dropdown#fr' }
       },
       'languages'
     )}

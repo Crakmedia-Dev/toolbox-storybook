@@ -44,7 +44,7 @@ const LanguageDropdown = ({ currentLanguageCode, languages }) => {
             ) : (
               <a
                 className="lang-inner"
-                href={`/${code}${path.startsWith('/') ? path : `/${path}`}`}
+                href={`${path}`}
               >
                 <LanguageItemContent code={code} fullName={fullName} />
               </a>

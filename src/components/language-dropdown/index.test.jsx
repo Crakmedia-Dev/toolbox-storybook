@@ -25,10 +25,8 @@ describe('LanguageDropdown', () => {
     )
   })
 
-  it('should render one selected language', () => {
-    const selectedItem = component.find('.selected LanguageItemContent')
-
-    expect(selectedItem).toBeTruthy()
+  it('should render only one selected language', () => {
+    expect(component.find('.selected LanguageItemContent')).toHaveLength(1)
   })
 
   it('should initially render the list non-visible', () => {
