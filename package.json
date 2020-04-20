@@ -7,7 +7,7 @@
   "bugs": "https://github.com/Crakmedia-Dev/toolbox-storybook/issues",
   "author": "Alexandre Consigny <aconsigny@crakmedia.com>, Sebastien De Varennes <sdevarennes@crakmedia.com>, Michelle Rochon <mrochon@crakmedia.com>",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "src/index.js",
   "files": [
     "src/**/index.js"
