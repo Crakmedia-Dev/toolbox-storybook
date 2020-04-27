@@ -6,27 +6,20 @@
   "bugs": "https://github.com/Crakmedia-Dev/toolbox-storybook/issues",
   "author": "Alexandre Consigny <aconsigny@crakmedia.com>, Sebastien De Varennes <sdevarennes@crakmedia.com>, Michelle Rochon <mrochon@crakmedia.com>",
   "license": "MIT",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "main": "dist/index.js",
-  "files": [
-    "src/**/index.js",
-    "src/components/**/index.jsx",
-    "src/components/**/styles.js",
-    "src/components/**/*.svg"
-  ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "dev": "npm run test:coverage && start-storybook -p 9009",
-    "serve": "start-storybook -p 3000",
     "build-storybook": "build-storybook -o docs",
     "build-storybook:watch": "build-storybook -o docs -w",
     "test": "react-scripts test --env=node --watchAll=false",
     "test:coverage": "react-scripts test --json --outputFile=src/test-results.json --env=node --watchAll=false",
     "test:watch": "react-scripts test --env=node",
     "build": "react-scripts build",
-    "prepublishOnly": "rm -rf ./dist && npx babel src --out-dir dist --copy-files"
+    "prepublishOnly": "rm -rf ./dist && babel src --out-dir dist"
   },
   "peerDependencies": {
     "react": ">=16.13.1",
@@ -61,5 +54,6 @@
     "react-scripts": "^3.4.1",
     "react-test-renderer": "^16.13.1",
     "styled-components": "^5.0.1"
-  }
+  },
+  "dependencies": {}
 }
