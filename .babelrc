@@ -1,4 +1,11 @@
 {
+  "ignore": [
+    "src/setupTests.js",
+    "**/*.test.js",
+    "**/*.test.jsx",
+    "**/stories.js",
+    "**/stories.jsx"
+  ],
   "presets": ["@babel/preset-env", "@babel/preset-react"],
   "plugins": [
     [
@@ -8,6 +15,7 @@
         "displayName": true,
         "preprocess": false
       }
-    ]
+    ],
+    "@babel/plugin-proposal-export-default-from"
   ]
 }

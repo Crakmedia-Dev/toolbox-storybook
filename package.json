@@ -60,6 +60,6 @@
     "styled-components": "^5.0.1"
   },
   "dependencies": {
-    "@crakmedia-dev/toolbox-storybook": "^1.1.6"
+    "@crakmedia-dev/toolbox-storybook": "^1.1.7"
   }
 }
