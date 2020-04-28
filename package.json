@@ -1,17 +1,19 @@
 {
-  "private": true,
-  "name": "toolbox-storybook",
+  "name": "@crakmedia-dev/toolbox-storybook",
   "homepage": "https://crakmedia-dev.github.io/toolbox-storybook",
   "description": "Component toolbox for Crakmedia's website development",
   "repository": "git@github.com:Crakmedia-Dev/toolbox-storybook.git",
   "bugs": "https://github.com/Crakmedia-Dev/toolbox-storybook/issues",
   "author": "Alexandre Consigny <aconsigny@crakmedia.com>, Sebastien De Varennes <sdevarennes@crakmedia.com>, Michelle Rochon <mrochon@crakmedia.com>",
   "license": "MIT",
-  "version": "1.1.0",
-  "main": "src/index.js",
+  "version": "1.1.7",
+  "main": "dist/index.js",
   "files": [
-    "src/**/index.js"
+    "dist/**"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "dev": "npm run test:coverage && start-storybook -p 9009",
     "build-storybook": "build-storybook -o docs",
@@ -19,15 +21,17 @@
     "test": "react-scripts test --env=node --watchAll=false",
     "test:coverage": "react-scripts test --json --outputFile=src/test-results.json --env=node --watchAll=false",
     "test:watch": "react-scripts test --env=node",
-    "serve": "start-storybook -p 3000"
+    "build": "react-scripts build",
+    "prepublishOnly": "rm -rf ./dist && babel src --out-dir dist"
   },
-  "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1"
+  "peerDependencies": {
+    "react": ">=16.13.1",
+    "react-dom": ">=16.13.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
     "@babel/preset-env": "^7.9.0",
     "@storybook/addon-a11y": "^5.3.17",
     "@storybook/addon-actions": "^5.3.17",
@@ -49,6 +53,9 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1",
     "react-test-renderer": "^16.13.1",
     "styled-components": "^5.0.1"
   }

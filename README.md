@@ -1,39 +1,70 @@
-## Toolbox storybook
+# Toolbox storybook
+
+## Installation
+
+To install the toolbox in your own project, run the following command:
+```shell script
+yarn add @Crakmedia-Dev/toolbox-storybook --registry=https://npm.pkg.github.com
+npm install @Crakmedia-Dev/toolbox-storybook --registry=https://npm.pkg.github.com
+```
+
+## Usage example
+
+```javascript
+import React from 'react'
+import { Button } from '@crakmedia-dev/toolbox-storybook'
+
+const MyButtonComponent = () => (
+  <Button onClick={ console.log('button was clicked') }>
+    This text will appear inside the button
+  </Button>
+)
+
+export default MyButtonComponent
+```
+
+## Contributing
 
 #### Install storybook dependencies
 
-```
+```shell script
 yarn install
 npm i
 ```
 
 #### Launch storybook
 
-```
+```shell script
 yarn dev
 npm run dev
 ```
 
-#### Launch tests
+#### Run tests
 
-For a one time run, use
-```
+For a one time run:
+```shell script
 yarn test
 npm run test
 ```
 
-#### During development, it is recommended to use for watching tests
+If you want updated results on every file save, run the following instead:
+```shell script
+yarn test:watch
+npm run test:watch
 ```
-yarn test:watch-coverage
-npm run test:watch-coverage
+
+To receive statistics concerning the coverage of the test-suite, run the following:
+```shell script
+yarn test:coverage
+npm run test:coverage
 ```
 
 #### Serving application for production container
-```
+
+```shell script
 yarn serve
 npm run serve
 ```
-
 
 #### How to prepare a pull request
 
