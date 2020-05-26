@@ -42,6 +42,6 @@ export const Picture = () => {
 
 Picture.story = {
   parameters: {
-    jest: ['Picture/index.test.jsx']
+    jest: ['picture/index.test.jsx']
   }
 }
