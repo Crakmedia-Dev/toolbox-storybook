@@ -19,4 +19,6 @@ export const defaultStyles = css`
   }
 `
 
-export const flexStyles = css``
+export const flexStyles = css`
+  display: flex;
+`

@@ -1,40 +1,46 @@
 import React from 'react'
-import { mount, shallow } from 'enzyme'
+import { shallow } from 'enzyme'
 import LanguageDropdown from './index'
 
 const defaultLanguage = {
-  code: 'one step from eden',
-  fullName: 'one step from eden',
-  path: 'ein quoi'
+  'bonjour madame': {
+    fullName: 'one step from eden',
+    path: 'ein quoi'
+  }
 }
 
 const languageWithFlag = {
-  code: 'en',
-  fullName: 'jesuisundrapeauanglais',
-  path: '/'
+  en: {
+    fullName: 'jesuisundrapeauanglais',
+    path: '/'
+  }
 }
-
 describe('LanguageDropdown', () => {
   let component
-  let closedDropdown
-  const languages = [defaultLanguage, languageWithFlag]
+  const languages = { ...defaultLanguage, ...languageWithFlag }
 
   beforeEach(() => {
     component = shallow(
-      <LanguageDropdown currentLanguageIndex={0} languages={languages} />
+      <LanguageDropdown currentLanguageCode="en" languages={languages} />
     )
-    closedDropdown = component.find('ul')
   })
 
-  it('should render one selected language', () => {
-    const selectedItem = component.find('.selected LanguageItemContent')
-
-    expect(selectedItem).toBeTruthy()
+  it('should render only one selected language', () => {
+    expect(component.find('.selected LanguageItemContent')).toHaveLength(1)
   })
 
-  it.todo('should render list as being closed')
+  it('should initially render the list non-visible', () => {
+    const dropdownList = component.find('.lang-dropdown')
+
+    expect(dropdownList.prop('isListVisible')).toEqual(false)
+  })
 
   describe('when clicked', () => {
-    it.todo('should open list')
+    it('should set list visible', () => {
+      component.find('button').simulate('click')
+      const dropdownList = component.find('.lang-dropdown')
+
+      expect(dropdownList.prop('isListVisible')).toBe(true)
+    })
   })
 })
