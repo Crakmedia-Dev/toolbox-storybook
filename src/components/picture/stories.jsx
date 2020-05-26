@@ -40,8 +40,8 @@ export const Picture = () => {
   return <LazyPicture {...props} />
 }
 
-// RoundedLanguageDropdown.story = {
-//   parameters: {
-//     jest: ['Language-dropdown/index.test.jsx']
-//   }
-// }
+Picture.story = {
+  parameters: {
+    jest: ['Picture/index.test.jsx']
+  }
+}

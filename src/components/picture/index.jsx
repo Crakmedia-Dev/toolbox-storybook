@@ -24,8 +24,8 @@ const LazyPicture = ({
     let didCancel = false
 
     if (imageRef && !pictureSources.length) {
-      if (IntersectionObserver) {
-        observer = new IntersectionObserver(
+      if (window.IntersectionObserver) {
+        observer = new window.IntersectionObserver(
           entries => {
             entries.forEach(entry => {
               // when image is visible in the viewport + rootMargin
