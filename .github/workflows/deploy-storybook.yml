@@ -3,28 +3,30 @@ name: Deploy Storybook & Package
 on:
   push:
     branches:
-      - master
+    - master
 
 jobs:
   build:
     name: Deploy Storybook
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+
       - name: Install dependencies
         uses: borales/actions-yarn@v2.1.0
         with:
           cmd: install
+
       - name: Run tests & output coverage file
         uses: borales/actions-yarn@v2.1.0
         with:
           cmd: test:coverage
+
       - name: Build Storybook
-        uses: borales/actions-yarn@v2.1.0
-        with:
-          cmd: build-storybook
+        run: build-storybook -o docs
+
       - name: Deploy Storybook
-        uses: borales/actions-yarn@v2.1.0
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          cmd: deploy-storybook
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
