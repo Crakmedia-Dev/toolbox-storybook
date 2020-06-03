@@ -29,6 +29,6 @@ export const RoundedLanguageDropdown = () => (
 
 RoundedLanguageDropdown.story = {
   parameters: {
-    jest: ['Language-dropdown/index.test.jsx']
+    jest: ['language-dropdown/index.test.jsx']
   }
 }
