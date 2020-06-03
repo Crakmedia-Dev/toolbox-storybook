@@ -10,20 +10,21 @@ jobs:
     name: Deploy Storybook
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Install dependencies
-        - uses: actions/checkout@v2
-        - uses: borales/actions-yarn@v2.1.0
-          with:
-            cmd: test:coverage
+        uses: borales/actions-yarn@v2.1.0
+        with:
+          cmd: test:coverage
       - name: Run tests & output coverage file
-        - uses: borales/actions-yarn@v2.1.0
-          with:
-            cmd: test:coverage
+        uses: borales/actions-yarn@v2.1.0
+        with:
+          cmd: test:coverage
       - name: Build Storybook
-        - uses: borales/actions-yarn@v2.1.0
-          with:
-            cmd: build-storybook
+        uses: borales/actions-yarn@v2.1.0
+        with:
+          cmd: build-storybook
       - name: Deploy Storybook
-        - uses: borales/actions-yarn@v2.1.0
-          with:
-            cmd: deploy-storybook
+        uses: borales/actions-yarn@v2.1.0
+        with:
+          cmd: deploy-storybook
