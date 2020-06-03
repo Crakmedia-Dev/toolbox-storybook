@@ -1,4 +1,5 @@
 # Toolbox storybook
+![Deploy Storybook & Package](https://github.com/Crakmedia-Dev/toolbox-storybook/workflows/Deploy%20Storybook%20&%20Package/badge.svg?branch=master&event=push)
 
 ## Installation
 
