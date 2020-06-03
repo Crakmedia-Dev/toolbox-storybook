@@ -1,12 +1,12 @@
 import React, { useState, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import LanguageList from './styles'
-import * as flags from './flags-round'
+import RoundFlag from './round-flag'
 
 const LanguageItemContent = ({ code, fullName }) => {
   return (
     <>
-      <img src={flags[code]} alt={code} />
+      <RoundFlag code={code} />
       {fullName || code}
     </>
   )

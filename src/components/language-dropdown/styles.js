@@ -82,9 +82,10 @@ const LanguageList = styled.ul`
             border: 0;
           }
 
-          img {
+          svg {
             margin-right: 1em;
             height: ${itemHeight - innerPadding * 2}em;
+            width: auto;
           }
         }
       }

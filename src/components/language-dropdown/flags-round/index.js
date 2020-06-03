@@ -1,8 +1,0 @@
-export { default as en } from './en.svg'
-export { default as fr } from './fr.svg'
-export { default as es } from './es.svg'
-export { default as it } from './it.svg'
-export { default as ja } from './ja.svg'
-export { default as nl } from './nl.svg'
-export { default as pt } from './pt.svg'
-export { default as ru } from './ru.svg'
