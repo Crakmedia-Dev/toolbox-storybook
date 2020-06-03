@@ -21,7 +21,7 @@
     "test:coverage": "react-scripts test --json --outputFile=src/test-results.json --env=node --watchAll=false",
     "test:watch": "react-scripts test --env=node",
     "build-storybook": "build-storybook -o docs",
-    "deploy-storybook": "gh-pages -d docs",
+    "deploy-storybook": "gh-pages -d docs -u \"Crakmedia <github-workflow@crakmedia.com>\"",
     "prepublishOnly": "rm -rf ./dist && babel src --out-dir dist"
   },
   "peerDependencies": {
