@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import Picture from './styles'
 
@@ -17,7 +17,7 @@ const LazyPicture = ({
   }
 }) => {
   const [pictureSources, setPictureSources] = useState([])
-  const [imageRef, setImageRef] = useState()
+  const imageRef = useRef(null)
 
   useEffect(() => {
     let observer
@@ -42,7 +42,7 @@ const LazyPicture = ({
             rootMargin: '75%'
           }
         )
-        observer.observe(imageRef)
+        observer.observe(imageRef.current)
       } else {
         // Old browsers fallback
         setPictureSources(sources)
@@ -51,9 +51,8 @@ const LazyPicture = ({
 
     return () => {
       didCancel = true
-      // on component unmount, we remove the listener
       if (observer && observer.unobserve) {
-        observer.unobserve(imageRef)
+        observer.unobserve(imageRef.current)
       }
     }
   }, [imageRef])
@@ -61,7 +60,7 @@ const LazyPicture = ({
   return (
     <>
       <Picture
-        ref={setImageRef}
+        ref={imageRef}
         className={`lz-pic${className ? ` ${className}` : ''}`}
         loadAnimationDelay={loadAnimationDelay}
       >
